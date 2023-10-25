@@ -5,7 +5,6 @@
 
 int registro() //Função responsável por cadastrar os usuários no sistemas
 {
-	setlocale(LC_ALL, "Portuguese"); //Definindo linguagem
 	//ninício da criação de variáveis/strings
 	char arquivo[40];
 	char cpf[40];
@@ -61,7 +60,6 @@ int registro() //Função responsável por cadastrar os usuários no sistemas
 
 int consulta() //Criando uma instância com o nome de consulta
 {
-	setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
 	//ninício da criação de variáveis/strings
 	char cpf[40];
 	char conteudo[100];
@@ -73,16 +71,16 @@ int consulta() //Criando uma instância com o nome de consulta
 	file = fopen(cpf,"r"); //Cria o arquivo e o "r" significa "pesquisar"
   	
 	if(file == NULL) //Função para se não encontrar a informação desejada retornar mensagem de erro
-{
-	printf("Não foi possivel abrir o arquivo, não localizado!.\n"); //Mensagem de erro retornada ao usuário
-}
+	{
+		printf("Não foi possivel abrir o arquivo, não localizado!.\n"); //Mensagem de erro retornada ao usuário
+	}
 	
-while(fgets(conteudo, 100, file) != NULL) //Função para se  encontrar a informação desejada retornar mensagem descrita no (printf)
-{
-	printf("\nEssas são as informações do usuário: "); //Mensagem retornada ao usuário
-	printf("%s",conteudo); //%s difere-se a strings
-	printf("\n\n"); //Pulando linhas cada "\n" é uma linha
-}
+	while(fgets(conteudo, 100, file) != NULL) //Função para se  encontrar a informação desejada retornar mensagem descrita no (printf)
+	{	
+		printf("\nEssas são as informações do usuário: "); //Mensagem retornada ao usuário
+		printf("%s",conteudo); //%s difere-se a strings
+		printf("\n\n"); //Pulando linhas cada "\n" é uma linha
+	}
   	
 system ("pause"); //Pausando o programa
 }
